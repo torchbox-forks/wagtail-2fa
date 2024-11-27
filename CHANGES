@@ -5,7 +5,12 @@ Unreleased
  - Add support for Wagtail 5.2 and 6.x
  - Drop support for Wagtail < 5.2
  - Update `otp_form` to be compatible with Wagtail 5.2 and 6.x
- - Add support for Django 5.0
+ - Add support for Django 5.0 (currently 5.1 is broken in example app)
+ - Drop support for Django 3.2
+ - Add support for Python 3.13 (testing)
+ - Drop support for Python 3.8
+ - Add support for Wagtail 6.3 (testing)
+ - Add support for Django 5.1
 
 
 1.6.9 (2023-12-20)
