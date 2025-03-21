@@ -1,13 +1,9 @@
 import qrcode
 import qrcode.image.svg
-from django import VERSION as DJANGO_VERSION
 from django.conf import settings
 from django.contrib.auth import REDIRECT_FIELD_NAME
 
-if DJANGO_VERSION >= (4, 1):
-    from django.contrib.auth.views import RedirectURLMixin
-else:
-    from django.contrib.auth.views import SuccessURLAllowedHostsMixin as RedirectURLMixin
+from django.contrib.auth.views import RedirectURLMixin
 
 from wagtail import VERSION as WAGTAIL_VERSION
 
