@@ -7,7 +7,7 @@ from wagtail import hooks, VERSION as WAGTAIL_VERSION
 from wagtail.admin.menu import MenuItem
 
 if WAGTAIL_VERSION >= (7, 1):
-    from wagtail.admin.widgets import ListingButton
+    from wagtail.admin.widgets import Button
 else:
     from wagtail.users.widgets import UserListingButton
 
@@ -76,7 +76,7 @@ def register(request):
 @hooks.register("register_user_listing_buttons")
 def register_user_listing_buttons(user, request_user):
     if WAGTAIL_VERSION >= (7, 1):
-        yield ListingButton(
+        yield Button(
             _("Manage 2FA"),
             reverse("wagtail_2fa_device_list", kwargs={"user_id": user.id}),
             attrs={"title": _("Edit this user")},
