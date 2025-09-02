@@ -26,7 +26,7 @@ Therefore our default branch is main and we are not following the original packa
 
 Keep the master branch up to date with the maintainers' master branch. If that has work not on our main branch, merge it to our main branch if necessary.
 
-The current latest TAG: https://github.com/torchbox-forks/wagtail-2fa/releases/tag/1.7.0%2Btbx
+The current latest TAG: https://github.com/torchbox-forks/wagtail-2fa/releases/tag/1.8.0%2Btbx
 
 Use the current latest TAG in your project requirements.
 
@@ -35,7 +35,7 @@ For poetry users:
 .. code-block:: toml
 
     [tool.poetry.dependencies]
-    wagtail-2fa = { git = "https://github.com/torchbox-forks/wagtail-2fa", tag="1.7.0+tbx" }
+    wagtail-2fa = { git = "https://github.com/torchbox-forks/wagtail-2fa", tag="1.8.0+tbx" }
 
 
 Development
