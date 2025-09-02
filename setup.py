@@ -62,7 +62,6 @@ setup(
         "Framework :: Django :: 5.1",
         "Framework :: Django :: 5.2",
         "Framework :: Wagtail",
-        "Framework :: Wagtail :: 5",
         "Framework :: Wagtail :: 6",
         "Framework :: Wagtail :: 7",
         "License :: OSI Approved :: MIT License",
