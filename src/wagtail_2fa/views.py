@@ -5,8 +5,6 @@ from django.contrib.auth import REDIRECT_FIELD_NAME
 
 from django.contrib.auth.views import RedirectURLMixin
 
-from wagtail import VERSION as WAGTAIL_VERSION
-
 from django.core.exceptions import PermissionDenied
 from django.http import HttpResponse
 from django.shortcuts import resolve_url
@@ -16,8 +14,7 @@ from django.utils.functional import cached_property
 from django.utils.http import url_has_allowed_host_and_scheme
 from django.views.decorators.cache import never_cache
 from django.views.decorators.debug import sensitive_post_parameters
-from django.views.generic import (
-    DeleteView, FormView, ListView, UpdateView, View)
+from django.views.generic import DeleteView, FormView, ListView, UpdateView, View
 from django_otp import login as otp_login
 from django_otp.plugins.otp_totp.models import TOTPDevice
 
@@ -26,11 +23,7 @@ from wagtail_2fa.mixins import OtpRequiredMixin
 
 
 class LoginView(RedirectURLMixin, FormView):
-
-    if WAGTAIL_VERSION >= (6, 0):
-        template_name = "wagtail_2fa/otp_form.html"
-    else:
-        template_name = "wagtail_2fa/legacy/otp_form.html"
+    template_name = "wagtail_2fa/otp_form.html"
 
     form_class = forms.TokenForm
     redirect_field_name = REDIRECT_FIELD_NAME

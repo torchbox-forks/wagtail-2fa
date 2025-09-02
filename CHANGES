@@ -1,19 +1,18 @@
 Unreleased
 ==========
- - Add tox testing for Wagtail 6.4
- - Add our own fork documentation to the README
- - Add testing for Wagtail 6.2
- - Drop testing for Django 3.2
- - Add support for Wagtail 5.2 and 6.x
- - Drop support for Wagtail < 5.2
- - Update `otp_form` to be compatible with Wagtail 5.2 and 6.x
- - Add support for Django 5.0 (currently 5.1 is broken in example app)
- - Drop support for Django 3.2
- - Add support for Python 3.13 (testing)
- - Drop support for Python 3.8
- - Add support for Wagtail 6.3 (testing)
- - Add support for Django 5.1
+ - Update dependencies to latest versions
+ - Update Wagtail supported versions to 6.3, 7.0 and 7.1 (Currently supported versions)
+ - Update Django supported versions to 4.2, 5.1 and 5.2 (Currently supported versions)
+ - Removed old code for handling no longer supported versions
 
+1.7.1 (2025-07-24)
+=================
+ - Update python release workflow to use Python 3.11
+
+
+1.7.0 (2025-07-24)
+=================
+ - Added support for wagtail 6.2 and above
 
 1.6.9 (2023-12-20)
 =================
