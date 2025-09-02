@@ -17,12 +17,12 @@ docs_require = [
 
 tests_require = [
     "coverage==5.5",
-    "pytest==6.2.4",
+    "pytest==7.2.2",
     "pytest-cov==2.12.1",
     "pytest-django==4.4.0",
     # Linting
     "flake8==3.9.2",  # 3.7.9
-    "isort==5.9.3",
+    "isort==5.12.0",
     "flake8-blind-except==0.2.0",
     "flake8-debugger==4.0.0",
     "wagtail-modeladmin==2.0.0"
@@ -35,7 +35,7 @@ with open("README.rst") as fh:
 
 setup(
     name="wagtail-2fa",
-    version="1.6.9",
+    version="1.7.1",
     description="Two factor authentication for Wagtail",
     long_description=long_description,
     url="https://github.com/LabD/wagtail-2fa",

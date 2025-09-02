@@ -10,6 +10,8 @@ from wagtail.users.widgets import UserListingButton
 
 from wagtail_2fa import views
 
+from wagtail import VERSION as WAGTAIL_VERSION
+
 
 @hooks.register("register_admin_urls")
 def urlpatterns():
