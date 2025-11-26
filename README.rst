@@ -17,6 +17,44 @@
 
 .. end-no-pypi
 
+========
+CAUTION!
+========
+
+This is a fork of the original wagtail-2fa package. The original package maintainer hasn't accepted PRs for a long time.
+Therefore our default branch is main and we are not following the original package's versioning.
+
+Keep the master branch up to date with the maintainers' master branch. If that has work not on our main branch, merge it to our main branch if necessary.
+
+The current latest TAG: https://github.com/torchbox-forks/wagtail-2fa/releases/tag/1.8.0%2Btbx
+
+Use the current latest TAG in your project requirements.
+
+For poetry users:
+
+.. code-block:: toml
+
+    [tool.poetry.dependencies]
+    wagtail-2fa = { git = "https://github.com/torchbox-forks/wagtail-2fa", tag="1.8.0+tbx" }
+
+
+Development
+===========
+
+Developing new work/fixes/upgrades should be based on the latest `main` branch and merged back to the `main` branch.
+
+If you consider any new work needs a new release then create a new branch from the `main` branch once your work is merged to the `main` branch.
+Name your new branch using the convention 'stable/[version]' where version is the next version number you want to use. (any branches using the stable prefix are automatically protected)
+We treat each stable branch as a snapshot of the codebase at the time of the release. We don't merge any further work to the stable branch.
+
+Then create the new release and tag it with the new version number and add a suffix of '+tbx' to the version number.
+
+We don't publish new releases to PyPI. We only use the package from the git repository.
+
+===========
+END CAUTION
+===========
+
 ===========
 wagtail-2fa
 ===========

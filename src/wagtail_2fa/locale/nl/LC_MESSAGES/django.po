@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-17 21:49+0200\n"
+"POT-Creation-Date: 2025-11-13 10:52+0100\n"
 "PO-Revision-Date: 2021-08-17 21:51+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -17,9 +17,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.4.2\n"
 
-#: forms.py:26
+#: forms.py:9 forms.py:26
 msgid "OTP token"
-msgstr "OTP code"
+msgstr "Tweestapsverificatiecode"
 
 #: forms.py:29
 msgid ""
@@ -60,19 +60,19 @@ msgstr "Verwijder 2FA apparaat"
 #: templates/wagtail_2fa/device_form.html:7
 #: templates/wagtail_2fa/device_list.html:6
 msgid "Two Factor Settings"
-msgstr "Twee Staps Verificatie Instellingen"
+msgstr "Tweestapsverificatieinstellingen"
 
 #: templates/wagtail_2fa/device_confirm_delete.html:10
 msgid "Do you want to delete the device?"
 msgstr "Wil je dit 2FA apparaat verwijderen?"
 
 #: templates/wagtail_2fa/device_confirm_delete.html:13
-#: templates/wagtail_2fa/device_form.html:79
+#: templates/wagtail_2fa/device_form.html:81
 msgid "Cancel"
 msgstr "Annuleer"
 
 #: templates/wagtail_2fa/device_confirm_delete.html:14
-#: templates/wagtail_2fa/device_list.html:28
+#: templates/wagtail_2fa/device_list.html:33
 msgid "Remove device"
 msgstr "Verwijder 2FA apparaat"
 
@@ -121,16 +121,16 @@ msgid ""
 msgstr ""
 "\n"
 "            <p>\n"
-"                Twee Staps Verificatie (2FA) is een manier om je account "
-"extra te beveiligen\n"
+"                Tweestapsverificatie (2FA) is een manier om je account extra "
+"te beveiligen\n"
 "                door middel van extra bewijs dat jij het bent (een tweede "
 "stap) boven op je wachtwoord.            </p>\n"
 "            <p>\n"
 "                De meest gebruikelijke implementatie van een tweede stap is "
 "een van je apparaten een willekeurige code te laten genereren die elke "
 "minuut verandert.\n"
-"Dit heet een One Time Password (een eenmalig geldig wachtwoord).            "
-"</p>\n"
+"Dit heet een tweestapsverificatiecode (een eenmalig geldig "
+"wachtwoord).            </p>\n"
 "            <p>\n"
 "                Om deze codes te genereren kun je een van de volgende apps "
 "gebruiken.\n"
@@ -147,7 +147,7 @@ msgstr ""
 "                </ul>\n"
 "            </p>\n"
 "            <p>\n"
-"                Om Twee Staps Verificatie in te stellen voor je Wagtail CMS "
+"                Om Tweestapsverificatie in te stellen voor je Wagtail CMS "
 "account installeer je een van de bovenstaande apps en scan je de QR-code "
 "hier onder.\n"
 " Houd er rekening mee dat als je je telefoon kwijtraakt of reset je niet "
@@ -166,11 +166,11 @@ msgstr ""
 "Als het niet lukt om de afbeelding te scannen, probeer dan om het volgende "
 "te kopiëren en plakken in je app:"
 
-#: templates/wagtail_2fa/device_form.html:80
+#: templates/wagtail_2fa/device_form.html:82
 msgid "Update"
 msgstr "Update"
 
-#: templates/wagtail_2fa/device_form.html:80
+#: templates/wagtail_2fa/device_form.html:82
 msgid "Create"
 msgstr "Toevoegen"
 
@@ -178,7 +178,7 @@ msgstr "Toevoegen"
 msgid "Registered 2FA devices"
 msgstr "Geregistreerde 2FA apparaten"
 
-#: templates/wagtail_2fa/device_list.html:32
+#: templates/wagtail_2fa/device_list.html:29
 msgid "Update device"
 msgstr "Bewerk apparaat"
 
@@ -186,27 +186,27 @@ msgstr "Bewerk apparaat"
 msgid "There are no devices for this user."
 msgstr "Deze gebruiker heeft geen 2FA apparaten."
 
-#: templates/wagtail_2fa/device_list.html:49
+#: templates/wagtail_2fa/device_list.html:51
 msgid "New device"
 msgstr "Nieuw 2FA apparaat"
 
-#: templates/wagtail_2fa/otp_form.html:3 templates/wagtail_2fa/otp_form.html:63
+#: templates/wagtail_2fa/otp_form.html:3 templates/wagtail_2fa/otp_form.html:46
 msgid "Sign in"
 msgstr "Inloggen"
 
-#: templates/wagtail_2fa/otp_form.html:18
-msgid "Invalid code"
-msgstr "Ongeldige code"
-
-#: templates/wagtail_2fa/otp_form.html:36
+#: templates/wagtail_2fa/otp_form.html:8
 msgid "Enter your two-factor authentication code"
 msgstr "Voer je 2FA verificatiecode in"
 
-#: templates/wagtail_2fa/otp_form.html:63
+#: templates/wagtail_2fa/otp_form.html:15
+msgid "Invalid code"
+msgstr "Ongeldige code"
+
+#: templates/wagtail_2fa/otp_form.html:46
 msgid "Signing in…"
 msgstr "Bezig met inloggen..."
 
-#: templates/wagtail_2fa/otp_form.html:64
+#: templates/wagtail_2fa/otp_form.html:48
 msgid "Sign out"
 msgstr "Uitloggen"
 
@@ -215,18 +215,18 @@ msgstr "Uitloggen"
 msgid "Device #%s"
 msgstr "Apparaat #%s"
 
-#: wagtail_hooks.py:57
+#: wagtail_hooks.py:71
 msgid "Manage your 2FA devices"
 msgstr "Beheer je 2FA apparaten"
 
-#: wagtail_hooks.py:58
+#: wagtail_hooks.py:72
 msgid "Add or remove devices for 2 factor authentication."
 msgstr "Verwijder of voeg 2FA apparaten toe."
 
-#: wagtail_hooks.py:64
+#: wagtail_hooks.py:80 wagtail_hooks.py:87
 msgid "Manage 2FA"
 msgstr "Beheer 2FA"
 
-#: wagtail_hooks.py:66
+#: wagtail_hooks.py:82 wagtail_hooks.py:89
 msgid "Edit this user"
 msgstr "Bewerk deze gebruiker"
