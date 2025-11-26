@@ -1,5 +1,6 @@
 Unreleased
 ==========
+ - Add testing for Python 3.14 and Wagtail 7.2 
  - Update dependencies to latest versions
  - Update Wagtail supported versions to 6.3, 7.0 and 7.1 (Currently supported versions)
  - Update Django supported versions to 4.2, 5.1 and 5.2 (Currently supported versions)
