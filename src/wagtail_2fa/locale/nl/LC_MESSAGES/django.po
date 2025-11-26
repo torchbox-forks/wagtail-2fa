@@ -19,7 +19,7 @@ msgstr ""
 
 #: forms.py:9 forms.py:26
 msgid "OTP token"
-msgstr "Tweestapverificatiecode"
+msgstr "Tweestapsverificatiecode"
 
 #: forms.py:29
 msgid ""
