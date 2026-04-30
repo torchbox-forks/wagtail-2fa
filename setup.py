@@ -3,11 +3,11 @@ import re
 from setuptools import find_packages, setup
 
 install_requires = [
-    "Django>=4.2",
-    "Wagtail>=6.3",
-    "django-otp>=1.6.1",
-    "six>=1.17.0",
-    "qrcode>=8.2",
+    "Django>=5.2",
+    "Wagtail>=7.0",
+    "django-otp>=1.7.0",
+    "six>=1.14.0",
+    "qrcode>=6.1",
 ]
 
 docs_require = [
@@ -16,16 +16,15 @@ docs_require = [
 ]
 
 tests_require = [
-    "coverage==7.10.1",
-    "pytest==8.4.1",
-    "pytest-cov==6.2.1",
-    "pytest-django==4.11.1",
+    "coverage==5.5",
+    "pytest>=7.2.2",
+    "pytest-cov>=2.12.1",
+    "pytest-django>=4.4.0",
     # Linting
-    "flake8==7.3.0",
-    "isort==6.0.1",
-    "flake8-blind-except==0.2.1",
-    "flake8-debugger==4.1.2",
-    "wagtail-modeladmin==2.2.0"
+    "flake8>=3.9.2",  # 3.7.9
+    "isort>=5.12.0",
+    "flake8-blind-except>=0.2.0",
+    "flake8-debugger>=4.0.0",
 ]
 
 with open("README.rst") as fh:
@@ -35,7 +34,7 @@ with open("README.rst") as fh:
 
 setup(
     name="wagtail-2fa",
-    version="1.8.0+tbx",
+    version="1.8.0",
     description="Two factor authentication for Wagtail",
     long_description=long_description,
     url="https://github.com/LabD/wagtail-2fa",
@@ -47,7 +46,7 @@ setup(
         "docs": docs_require,
         "test": tests_require,
     },
-    python_requires=">=3.9",
+    python_requires=">=3.10",
     use_scm_version=True,
     entry_points={},
     package_dir={"": "src"},
