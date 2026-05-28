@@ -3,10 +3,9 @@ import re
 from setuptools import find_packages, setup
 
 install_requires = [
-    "Django>=5.2",
-    "Wagtail>=7.0",
+    "Django>=5.2,<7",
+    "Wagtail>=7.0,<8",
     "django-otp>=1.7.0",
-    "six>=1.14.0",
     "qrcode>=6.1",
 ]
 
@@ -58,6 +57,7 @@ setup(
         "Environment :: Web Environment",
         "Framework :: Django",
         "Framework :: Django :: 5.2",
+        "Framework :: Django :: 6.0",
         "Framework :: Wagtail",
         "Framework :: Wagtail :: 7",
         "License :: OSI Approved :: MIT License",
