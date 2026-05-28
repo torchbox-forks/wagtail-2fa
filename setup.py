@@ -10,20 +10,20 @@ install_requires = [
 ]
 
 docs_require = [
-    "sphinx>=1.4.1",
-    "sphinx_rtd_theme>=0.4.3",
+    "sphinx>=7.0",
+    "sphinx_rtd_theme>=2.0",
 ]
 
 tests_require = [
-    "coverage==5.5",
-    "pytest>=7.2.2",
-    "pytest-cov>=2.12.1",
-    "pytest-django>=4.4.0",
+    "coverage>=7.0,<8",
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "pytest-django>=4.8",
     # Linting
-    "flake8>=3.9.2",  # 3.7.9
-    "isort>=5.12.0",
-    "flake8-blind-except>=0.2.0",
-    "flake8-debugger>=4.0.0",
+    "flake8>=7.0",
+    "isort>=5.13",
+    "flake8-blind-except>=0.2.1",
+    "flake8-debugger>=4.1",
 ]
 
 with open("README.rst") as fh:
