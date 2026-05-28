@@ -3,8 +3,8 @@ import re
 from setuptools import find_packages, setup
 
 install_requires = [
-    "Django>=5.2,<7",
-    "Wagtail>=7.0,<8",
+    "Django>=5.2",
+    "Wagtail>=7.0",
     "django-otp>=1.7.0",
     "qrcode>=6.1",
 ]
@@ -15,7 +15,7 @@ docs_require = [
 ]
 
 tests_require = [
-    "coverage>=7.0,<8",
+    "coverage>=7.0",
     "pytest>=8.0",
     "pytest-cov>=5.0",
     "pytest-django>=4.8",
