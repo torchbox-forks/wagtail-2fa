@@ -3,10 +3,9 @@ import re
 from setuptools import find_packages, setup
 
 install_requires = [
-    "Django>=5.2",
-    "Wagtail>=7.0",
+    "Django>=4.2,<6.1",
+    "Wagtail>=7.0,<7.5",
     "django-otp>=1.7.0",
-    "six>=1.14.0",
     "qrcode>=6.1",
 ]
 
@@ -54,22 +53,22 @@ setup(
     include_package_data=True,
     license="MIT",
     classifiers=[
-        "Development Status :: 4 - Beta",
+        "Development Status :: 5 - Production/Stable",
         "Environment :: Web Environment",
         "Framework :: Django",
-        "Framework :: Django :: 3.2",
-        "Framework :: Django :: 4.1",
         "Framework :: Django :: 4.2",
+        "Framework :: Django :: 5.1",
+        "Framework :: Django :: 5.2",
+        "Framework :: Django :: 6.0",
         "Framework :: Wagtail",
-        "Framework :: Wagtail :: 2",
-        "Framework :: Wagtail :: 3",
-        "Framework :: Wagtail :: 4",
+        "Framework :: Wagtail :: 7",
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 3.8",
-        "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14",
     ],
     zip_safe=False,
 )

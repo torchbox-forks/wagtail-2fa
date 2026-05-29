@@ -1,3 +1,15 @@
+Unreleased
+==========
+ - Added support for Django 6.0, Python 3.14, and Wagtail 7.4 LTS.
+ - Dropped support for Wagtail < 7.0 and Django < 4.2; supported Wagtail
+   range is now 7.0 LTS to 7.4 LTS, supported Django range is 4.2 to 6.0,
+   supported Python range is 3.10 to 3.14.
+ - Removed the unused ``six`` runtime dependency.
+ - Removed legacy Django < 4.1 and Wagtail < 6.0 template and hook
+   compatibility shims; the ``otp_form.html`` and ``legacy/otp_form.html``
+   templates have been removed.
+
+
 1.8.0 (2026-02-05)
 ==================
  - bump required version of django-otp and update middleware
