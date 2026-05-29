@@ -30,6 +30,14 @@ allows you to use various apps like Authy, Google Authenticator, or
 .. _django-otp: https://django-otp-official.readthedocs.io
 
 
+Supported versions
+==================
+
+- Python: 3.10, 3.11, 3.12, 3.13, 3.14
+- Django: 4.2 LTS, 5.1, 5.2 LTS, 6.0
+- Wagtail: 7.0 LTS, 7.4 LTS
+
+
 Installation
 ============
 
@@ -114,8 +122,8 @@ and 2FA can be enabled or disabled per group.
 Sandbox
 =======
 
-First create a new virtualenv with Python 3.8 and activate it. Then run
-the following commands:
+First create a new virtualenv with a supported Python (3.10 or newer) and
+activate it. Then run the following commands:
 
 .. code-block:: shell
 

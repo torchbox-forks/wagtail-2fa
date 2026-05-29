@@ -3,26 +3,25 @@ import re
 from setuptools import find_packages, setup
 
 install_requires = [
-    "Django>=5.2",
-    "Wagtail>=7.0",
+    "Django>=4.2,<6.1",
+    "Wagtail>=7.0,<7.5",
     "django-otp>=1.7.0",
-    "six>=1.14.0",
     "qrcode>=6.1",
 ]
 
 docs_require = [
-    "sphinx>=1.4.1",
-    "sphinx_rtd_theme>=0.4.3",
+    "sphinx>=7.4",
+    "sphinx_rtd_theme>=2.0",
 ]
 
 tests_require = [
-    "coverage==5.5",
-    "pytest>=7.2.2",
-    "pytest-cov>=2.12.1",
-    "pytest-django>=4.4.0",
+    "coverage>=7.6",
+    "pytest>=8.3",
+    "pytest-cov>=5.0",
+    "pytest-django>=4.9",
     # Linting
-    "flake8>=3.9.2",  # 3.7.9
-    "isort>=5.12.0",
+    "flake8>=7.1",
+    "isort>=6.0",
     "flake8-blind-except>=0.2.0",
     "flake8-debugger>=4.0.0",
 ]
@@ -54,22 +53,22 @@ setup(
     include_package_data=True,
     license="MIT",
     classifiers=[
-        "Development Status :: 4 - Beta",
+        "Development Status :: 5 - Production/Stable",
         "Environment :: Web Environment",
         "Framework :: Django",
-        "Framework :: Django :: 3.2",
-        "Framework :: Django :: 4.1",
         "Framework :: Django :: 4.2",
+        "Framework :: Django :: 5.1",
+        "Framework :: Django :: 5.2",
+        "Framework :: Django :: 6.0",
         "Framework :: Wagtail",
-        "Framework :: Wagtail :: 2",
-        "Framework :: Wagtail :: 3",
-        "Framework :: Wagtail :: 4",
+        "Framework :: Wagtail :: 7",
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 3.8",
-        "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14",
     ],
     zip_safe=False,
 )
