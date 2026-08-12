@@ -97,7 +97,7 @@ def register_2fa_permission():
     # Always registered, regardless of which VerifyUser*Middleware is in
     # use - this is a Wagtail Group-management permission.
     permissions |= Permission.objects.filter(
-        content_type__app_label="wagtail_2fa", codename="manage_2fa_devices"
+        content_type__app_label="wagtailadmin", codename="manage_2fa_devices"
     )
 
     return permissions

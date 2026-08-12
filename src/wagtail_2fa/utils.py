@@ -15,7 +15,7 @@ def user_can_manage_other_users_devices(user):
     permission = getattr(
         settings,
         "WAGTAIL_2FA_MANAGE_DEVICES_PERMISSION",
-        "wagtail_2fa.manage_2fa_devices",
+        "wagtailadmin.manage_2fa_devices",
     )
     if permission and user.has_perm(permission):
         return True

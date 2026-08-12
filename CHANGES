@@ -4,7 +4,7 @@ Unreleased
    staff the ability to manage other users' 2FA devices without granting
    the much broader ``change_user`` permission. Configurable via the new
    ``WAGTAIL_2FA_MANAGE_DEVICES_PERMISSION`` setting (defaults to
-   ``wagtail_2fa.manage_2fa_devices``)
+   ``wagtailadmin.manage_2fa_devices``).
  - Fix ``DeviceListView`` and ``DeviceDeleteView`` incorrectly checking a
    hardcoded ``user.change_user`` permission (a leftover from the
    package's sandbox project) instead of deriving the permission from the
