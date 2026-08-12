@@ -1,5 +1,18 @@
 Unreleased
 ==================
+ - Add a narrower ``manage_2fa_devices`` permission so projects can grant
+   staff the ability to manage other users' 2FA devices without granting
+   the much broader ``change_user`` permission. Configurable via the new
+   ``WAGTAIL_2FA_MANAGE_DEVICES_PERMISSION`` setting (defaults to
+   ``wagtail_2fa.manage_2fa_devices``)
+ - Fix ``DeviceListView`` and ``DeviceDeleteView`` incorrectly checking a
+   hardcoded ``user.change_user`` permission (a leftover from the
+   package's sandbox project) instead of deriving the permission from the
+   consuming project's actual ``AUTH_USER_MODEL``. This previously meant
+   non-superusers could never manage other users' devices via
+   ``change_user`` at all
+ - The "Manage 2FA" user-listing button is now only shown to users who
+   are permitted to manage the target user's devices
  - Add support for Wagtail 7.4 (LTS) and Django 6.0
  - Expand test matrix to cover Python 3.10, 3.11, and 3.12 (previously
    declared in classifiers but not exercised in tox); CI now tests against

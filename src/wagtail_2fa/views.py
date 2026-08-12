@@ -1,8 +1,16 @@
 import qrcode
 import qrcode.image.svg
+from django import VERSION as DJANGO_VERSION
 from django.conf import settings
 from django.contrib.auth import REDIRECT_FIELD_NAME
-from django.contrib.auth.views import RedirectURLMixin
+
+if DJANGO_VERSION >= (4, 1):
+    from django.contrib.auth.views import RedirectURLMixin
+else:
+    from django.contrib.auth.views import SuccessURLAllowedHostsMixin as RedirectURLMixin
+
+from wagtail import VERSION as WAGTAIL_VERSION
+
 from django.core.exceptions import PermissionDenied
 from django.http import HttpResponse
 from django.shortcuts import resolve_url
@@ -82,12 +90,14 @@ class DeviceListView(OtpRequiredMixin, ListView):
         """Override dispatch to ensure user is allowed to list the devices.
 
         Users are always allowed to list their own 2FA devices.
-        If they have the ``change_user`` permission, they are allowed
+        If they have the ``manage_2fa_devices`` permission (or the
+        consuming project's ``change_user`` permission), they are allowed
         to list other users' 2FA devices.
 
         """
-        if int(self.kwargs["user_id"]) == request.user.pk or request.user.has_perm(
-            "user.change_user"
+        user_id = int(self.kwargs["user_id"])
+        if user_id == request.user.pk or utils.user_can_manage_other_users_devices(
+            request.user
         ):
             if not self.user_allowed(request.user):
                 return self.handle_no_permission(request)
@@ -165,12 +175,13 @@ class DeviceDeleteView(OtpRequiredMixin, DeleteView):
         """Override dispatch to ensure user is allowed to delete the device.
 
         Users are always allowed to delete their own 2FA devices.
-        If they have the ``change_user`` permission, they are allowed
+        If they have the ``manage_2fa_devices`` permission (or the
+        consuming project's ``change_user`` permission), they are allowed
         to delete other users' 2FA devices.
         """
         device = TOTPDevice.objects.get(**self.kwargs)
-        if device.user.pk == request.user.pk or request.user.has_perm(
-            "user.change_user"
+        if device.user.pk == request.user.pk or utils.user_can_manage_other_users_devices(
+            request.user
         ):
             if not self.user_allowed(request.user):
                 return self.handle_no_permission(request)

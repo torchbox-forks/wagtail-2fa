@@ -12,7 +12,7 @@ else:
     from wagtail.users.widgets import UserListingButton as Button
 
 
-from wagtail_2fa import views
+from wagtail_2fa import utils, views
 
 
 @hooks.register("register_admin_urls")
@@ -75,19 +75,30 @@ def register(request):
 
 @hooks.register("register_user_listing_buttons")
 def register_user_listing_buttons(user, request_user):
-    yield Button(
-        _("Manage 2FA"),
-        reverse("wagtail_2fa_device_list", kwargs={"user_id": user.id}),
-        attrs={"title": _("Edit this user")},
-        priority=100,
-    )
+    if user.pk == request_user.pk or utils.user_can_manage_other_users_devices(
+        request_user
+    ):
+        yield Button(
+            _("Manage 2FA"),
+            reverse("wagtail_2fa_device_list", kwargs={"user_id": user.id}),
+            attrs={"title": _("Edit this user")},
+            priority=100,
+        )
 
 
 @hooks.register("register_permissions")
 def register_2fa_permission():
+    permissions = Permission.objects.none()
+
     if "wagtail_2fa.middleware.VerifyUserPermissionsMiddleware" in settings.MIDDLEWARE:
-        return Permission.objects.filter(
+        permissions |= Permission.objects.filter(
             content_type__app_label="wagtailadmin", codename="enable_2fa"
         )
 
-    return Permission.objects.none()
+    # Always registered, regardless of which VerifyUser*Middleware is in
+    # use - this is a Wagtail Group-management permission.
+    permissions |= Permission.objects.filter(
+        content_type__app_label="wagtail_2fa", codename="manage_2fa_devices"
+    )
+
+    return permissions
