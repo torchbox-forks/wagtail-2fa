@@ -152,7 +152,7 @@ class TestViewsChangeUserPermission:
 
     def test_verified_user_has_no_manage_devices_or_change_user_perm(self, verified_user):
         """Sanity check - a freshly-created user has no special permissions."""
-        assert not verified_user.has_perm("wagtail_2fa.manage_2fa_devices")
+        assert not verified_user.has_perm("wagtailadmin.manage_2fa_devices")
         # The consuming project's actual user model app_label/name here is
         # auth.User, since these tests don't configure a custom
         # AUTH_USER_MODEL - see conftest.py's settings.configure().
@@ -208,7 +208,7 @@ class TestViewsChangeUserPermission:
         """The narrow manage_2fa_devices permission is enough on its own -
         no change_user permission required."""
         permission = Permission.objects.get(
-            content_type__app_label="wagtail_2fa", codename="manage_2fa_devices"
+            content_type__app_label="wagtailadmin", codename="manage_2fa_devices"
         )
         verified_user.user_permissions.add(permission)
         # has_perm caches permissions on the instance; clear just that
@@ -230,7 +230,7 @@ class TestViewsChangeUserPermission:
         self, user, verified_user, rf
     ):
         permission = Permission.objects.get(
-            content_type__app_label="wagtail_2fa", codename="manage_2fa_devices"
+            content_type__app_label="wagtailadmin", codename="manage_2fa_devices"
         )
         verified_user.user_permissions.add(permission)
         for cache_attr in ("_perm_cache", "_user_perm_cache", "_group_perm_cache"):
